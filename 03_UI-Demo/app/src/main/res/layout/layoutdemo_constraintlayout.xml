@@ -1,0 +1,41 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/me.tuxtimo.hslu.mobpro.ui_demo"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="136dp"
+            android:text="Button"
+            app2:layout_constraintEnd_toStartOf="@+id/toggleButton"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="144dp"
+            android:layout_marginTop="64dp"
+            android:text="ToggleButton"
+            app2:layout_constraintStart_toEndOf="@+id/switch1"
+            app2:layout_constraintTop_toTopOf="parent" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:layout_marginTop="56dp"
+            android:text="Switch"
+            app2:layout_constraintTop_toBottomOf="@+id/button"
+            tools:layout_editor_absoluteX="22dp" />
+
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

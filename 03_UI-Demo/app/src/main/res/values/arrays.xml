@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnervalues">
+        <item>Pickachu</item>
+        <item>Shiggy</item>
+        <item>Charmander</item>
+    </string-array>
+</resources>
