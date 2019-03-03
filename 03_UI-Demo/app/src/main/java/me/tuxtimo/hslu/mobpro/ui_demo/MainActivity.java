@@ -1,7 +1,9 @@
 package me.tuxtimo.hslu.mobpro.ui_demo;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,8 +12,6 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.lifecycle.ViewModelProviders;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //counter = ViewModelProviders.of(this).get(CounterViewModel.class);
+        counter = ViewModelProviders.of(this).get(CounterViewModel.class);
         counterLabel = findViewById(R.id.counterLabel);
-        //updateCounter();
+        updateCounter();
     }
 
     public void increaseCounter(View button) {
