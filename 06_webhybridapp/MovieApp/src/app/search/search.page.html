@@ -7,7 +7,7 @@
 <ion-content>
     Enter the movie title to search for below and pess the enter key or the search button.
 
-    <ion-input value="Enter the Move Title here"></ion-input>
+    <ion-input value="Enter the Move Title here" [(ngModel)]="searchValue"></ion-input>
     <ion-button (click) = "search()">
         <ion-icon slot="start" name="search"></ion-icon>
         Search

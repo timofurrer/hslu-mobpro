@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NavExtraDataService } from '../nav-extra-data.service.ts';
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.page.html',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsPage implements OnInit {
 
-  constructor() { }
+  movie: Movie;
+
+  constructor(private navExtras: NavExtraDataService) {
+    this.movie = this.navExtras.getExtras();
+  }
 
   ngOnInit() {
   }
