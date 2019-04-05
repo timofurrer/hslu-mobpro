@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
-import { NavExtraDataService } from '../nav-extra-data.service.ts';
+import { NavExtraDataService } from '../nav-extra-data.service';
+import { Movie } from '../movie';
 
 @Component({
   selector: 'app-search',

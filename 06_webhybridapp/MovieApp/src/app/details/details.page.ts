@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NavExtraDataService } from '../nav-extra-data.service.ts';
+import { NavExtraDataService } from '../nav-extra-data.service';
+import { Movie } from '../movie';
 
 @Component({
   selector: 'app-details',
