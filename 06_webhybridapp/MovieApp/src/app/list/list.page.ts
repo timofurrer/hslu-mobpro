@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
+import { NavExtraDataService } from '../nav-extra-data.service';
+import { Movie } from '../movie';
 
 @Component({
   selector: 'app-list',
@@ -6,34 +11,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['list.page.scss']
 })
 export class ListPage implements OnInit {
-  private selectedItem: any;
-  private icons = [
-    'flask',
-    'wifi',
-    'beer',
-    'football',
-    'basketball',
-    'paper-plane',
-    'american-football',
-    'boat',
-    'bluetooth',
-    'build'
+  public movies: Array<Movie> = [];
+  private favoriteMovies = [
+    'batman',
+    'django',
+    'grit',
+    'pulp',
+    'Wolverine'
   ];
-  public items: Array<{ title: string; note: string; icon: string }> = [];
-  constructor() {
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+  constructor(private http: HttpClient, private router: Router, private navExtras: NavExtraDataService) {
+    for (let fav of this.favoriteMovies) {
+      this.http.get("../../assets/movies/" + fav + ".json").subscribe(data => {
+        let movie: Movie = <Movie>data;
+        this.movies.push(movie);
       });
     }
   }
 
   ngOnInit() {
   }
-  // add back when alpha.4 is out
-  // navigate(item) {
-  //   this.router.navigate(['/list', JSON.stringify(item)]);
-  // }
+
+  selectedMovie(movie) {
+    this.navExtras.setExtras(movie)
+    this.router.navigate(['/details']);
+  }
 }
